@@ -1,0 +1,54 @@
+@import "compass";
+@import "variables";
+@import "mixins";
+@import "susyone";
+$total-columns: 12;
+$column-width: 5em;
+#wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: $wrapper;
+  @include container;
+  @include susy-grid-background;
+  @include border-box-sizing;
+}
+%margin {
+  margin-left: $margin-percent / 2;
+  margin-right: $margin-percent / 2;
+}
+#header {
+  @extend %margin;
+  width: $he-foot;
+  background-color: $color8;
+}
+#navigation ul li {
+  display: inline-block;
+}
+#sidebar {
+  @extend %margin;
+  float: left;
+  background-color: $color9;
+  width: $sidebar;
+  @include at-breakpoint($M) {
+    @include span-columns(3, 12);
+  }
+}
+#content {
+  @extend %margin;
+  float: right;
+  width: $main-content;
+  background-color: $color10;
+  @include at-breakpoint($M) {
+    @include prefix(1,12);
+    @include span-columns(9 omega, 12);
+  }
+}
+#footer {
+  @extend %margin;
+  clear: both;
+  background-color: $color11;
+  width: $he-foot;
+}
+img {
+  max-width: 100%;
+}
