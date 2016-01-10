@@ -57,31 +57,31 @@ p span {
 }
 
 /* line 15, ../sass/partials/_flow_layout.scss */
-#header, #sidebar, #content, #footer {
+header, aside, #content, footer {
   margin-left: 1.04167%;
   margin-right: 1.04167%;
 }
 
 /* line 19, ../sass/partials/_flow_layout.scss */
-#header {
+header {
   width: 97.91667%;
   background-color: #779307;
 }
 
 /* line 24, ../sass/partials/_flow_layout.scss */
-#navigation ul li {
+nav ul li {
   display: inline-block;
 }
 
 /* line 27, ../sass/partials/_flow_layout.scss */
-#sidebar {
+aside {
   float: left;
   background-color: #fe9c00;
   width: 22.91667%;
 }
 @media (min-width: 48em) {
   /* line 27, ../sass/partials/_flow_layout.scss */
-  #sidebar {
+  aside {
     width: 23.94366%;
     float: left;
     margin-right: 1.40845%;
@@ -98,14 +98,14 @@ p span {
   /* line 36, ../sass/partials/_flow_layout.scss */
   #content {
     padding-left: 8.4507%;
-    width: 74.64789%;
+    width: 66.19718%;
     float: right;
     margin-right: 0;
   }
 }
 
 /* line 46, ../sass/partials/_flow_layout.scss */
-#footer {
+footer {
   clear: both;
   background-color: #663300;
   width: 97.91667%;

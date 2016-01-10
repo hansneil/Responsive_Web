@@ -1,7 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>And the winner isn't...</title>
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
@@ -10,27 +11,33 @@
 
 <div id="wrapper">
     <!-- the header and navigation -->
-    <div id="header">
-        <div id="navigation">
+    <header role="banner">
+        <nav role="navigation">
             <ul>
                 <li><a href="#">navigation1</a></li>
                 <li><a href="#">navigation2</a></li>
             </ul>
-        </div>
-    </div>
+        </nav>
+    </header>
     <!-- the sidebar -->
-    <div id="sidebar">
-        <p>here is the sidebar</p>
-    </div>
+    <aside>
+        <section role="complementary">
+            <p>here is the sidebar</p>
+        </section>
+        <section role="complementary">
+            <p>another sidebar</p>
+        </section>
+    </aside>
     <!-- the content -->
-    <div id="content">
+    <div id="content" role="main">
         <p>here is the content<span> it's Interesting</span></p>
         <img src="img/midnightRun.jpg" alt="midnight run"/>
+        <video></video>
     </div>
     <!-- the footer -->
-    <div id="footer">
+    <footer role="contentinfo">
         <p>Here is the footer</p>
-    </div>
+    </footer>
 
 </div>
 </body>

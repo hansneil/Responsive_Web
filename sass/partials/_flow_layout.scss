@@ -16,15 +16,15 @@ $column-width: 5em;
   margin-left: $margin-percent / 2;
   margin-right: $margin-percent / 2;
 }
-#header {
+header {
   @extend %margin;
   width: $he-foot;
   background-color: $color8;
 }
-#navigation ul li {
+nav ul li {
   display: inline-block;
 }
-#sidebar {
+aside {
   @extend %margin;
   float: left;
   background-color: $color9;
@@ -40,10 +40,10 @@ $column-width: 5em;
   background-color: $color10;
   @include at-breakpoint($M) {
     @include prefix(1,12);
-    @include span-columns(9 omega, 12);
+    @include span-columns(8 omega, 12);
   }
 }
-#footer {
+footer {
   @extend %margin;
   clear: both;
   background-color: $color11;
