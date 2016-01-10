@@ -1,0 +1,119 @@
+@import "partials/variables";
+$column-gap: 2em;
+$column-rule: thin dotted #999;
+$column-width: 12em;
+/*
+  CSS3多栏布局
+  --
+  相关属性:
+    设置分栏数: column-count
+    设置单栏宽度: column-width
+    设置栏间隔: column-gap
+    设置分割线: column-rule
+*/
+p[id *= "-content-"] {
+  -webkit-column-width: $column-width;
+  -moz-column-width: $column-width;
+  column-width: $column-width;
+  -webkit-column-gap: $column-gap;
+  -moz-column-gap: $column-gap;
+  column-gap: $column-gap;
+  column-rule: $column-rule;
+}
+/*
+  CSS3文字换行
+  --
+  属性:
+    word-wrap: break-word
+*/
+p[id ^= "my-content"] {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+/*
+  CSS3新增选择器
+  --
+  1.CSS3属性选择器
+  ----
+    CSS3子字符串匹配属性选择器
+    三类:以特定前缀开头 Element[attribute ^= "value"]
+        包含特定字符串的 Element[attribute *= "value"]
+        以特定后缀结尾的 Element[attribute $= "value"]
+*/
+p[id ^= "my-"] {
+  color: $color1;
+}
+/*
+  CSS3结构伪类
+  --
+  1. last-child选择器
+  2. nth-child选择器
+  3. nth-last-child选择器
+  4. nth-of-type选择器
+  5. not选择器
+  6. 伪元素的修正: ::first-line ::first-letter
+*/
+header p:last-child {
+  color: $color8;
+}
+nav {
+  display: table;
+}
+nav ul {
+  display: table-row;
+  border: .1em solid $color4;
+}
+nav ul li {
+  display: table-cell;
+  width: 5em;
+  border-top: .2em solid $color4;
+  border-bottom: .2em solid $color4;
+  &:last-child {
+    text-align: right;
+    border-right: .2em solid $color4;
+  }
+  &:first-child {
+    text-align: left;
+    border-left: .2em solid $color4;
+  }
+  a {
+    text-decoration: none;
+    color: $color3;
+  }
+  &.me:nth-of-type(2n+1) a{
+    color: $color1;
+  }
+  &:not(.me) a{
+    color: $color5;
+  }
+}
+p::first-letter {
+  font-size: 2em;
+}
+p::first-line {
+  color: #00e8f8;
+}
+/*
+  CSS3自定义字体
+  --
+  @font-face {
+    font-family: "font-name";
+    src: url(*.eot);
+    src: url(*.eot?#iefix) format('embedded-opentype'),
+         url(*.woff) format('woff'),
+         url(*.ttf) format('truetype'),
+         url(*.svg#BebasNeueRegular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+*/
+@font-face {
+  font-family: "Bebas";
+  src: url('fonts/BebasNeue Book.otf');
+  src: url('fonts/BebasNeue Book.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+p::first-line {
+  font-family: "Bebas";
+}

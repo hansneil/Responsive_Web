@@ -1,0 +1,140 @@
+@charset "UTF-8";
+/*
+  CSS3多栏布局
+  --
+  相关属性:
+    设置分栏数: column-count
+    设置单栏宽度: column-width
+    设置栏间隔: column-gap
+    设置分割线: column-rule
+*/
+/* line 14, ../sass/css3.scss */
+p[id*="-content-"] {
+  -webkit-column-width: 12em;
+  -moz-column-width: 12em;
+  column-width: 12em;
+  -webkit-column-gap: 2em;
+  -moz-column-gap: 2em;
+  column-gap: 2em;
+  column-rule: thin dotted #999;
+}
+
+/*
+  CSS3文字换行
+  --
+  属性:
+    word-wrap: break-word
+*/
+/* line 29, ../sass/css3.scss */
+p[id^="my-content"] {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/*
+  CSS3新增选择器
+  --
+  1.CSS3属性选择器
+  ----
+    CSS3子字符串匹配属性选择器
+    三类:以特定前缀开头 Element[attribute ^= "value"]
+        包含特定字符串的 Element[attribute *= "value"]
+        以特定后缀结尾的 Element[attribute $= "value"]
+*/
+/* line 43, ../sass/css3.scss */
+p[id^="my-"] {
+  color: #781421;
+}
+
+/*
+  CSS3结构伪类
+  --
+  1. last-child选择器
+  2. nth-child选择器
+  3. nth-last-child选择器
+  4. nth-of-type选择器
+  5. not选择器
+  6. 伪元素的修正: ::first-line ::first-letter
+*/
+/* line 56, ../sass/css3.scss */
+header p:last-child {
+  color: #779307;
+}
+
+/* line 59, ../sass/css3.scss */
+nav {
+  display: table;
+}
+
+/* line 62, ../sass/css3.scss */
+nav ul {
+  display: table-row;
+  border: 0.1em solid #23e878;
+}
+
+/* line 66, ../sass/css3.scss */
+nav ul li {
+  display: table-cell;
+  width: 5em;
+  border-top: 0.2em solid #23e878;
+  border-bottom: 0.2em solid #23e878;
+}
+/* line 71, ../sass/css3.scss */
+nav ul li:last-child {
+  text-align: right;
+  border-right: 0.2em solid #23e878;
+}
+/* line 75, ../sass/css3.scss */
+nav ul li:first-child {
+  text-align: left;
+  border-left: 0.2em solid #23e878;
+}
+/* line 79, ../sass/css3.scss */
+nav ul li a {
+  text-decoration: none;
+  color: #d3ff76;
+}
+/* line 83, ../sass/css3.scss */
+nav ul li.me:nth-of-type(2n+1) a {
+  color: #781421;
+}
+/* line 86, ../sass/css3.scss */
+nav ul li:not(.me) a {
+  color: #00e8f8;
+}
+
+/* line 90, ../sass/css3.scss */
+p::first-letter {
+  font-size: 2em;
+}
+
+/* line 93, ../sass/css3.scss */
+p::first-line {
+  color: #00e8f8;
+}
+
+/*
+  CSS3自定义字体
+  --
+  @font-face {
+    font-family: "font-name";
+    src: url(*.eot);
+    src: url(*.eot?#iefix) format('embedded-opentype'),
+         url(*.woff) format('woff'),
+         url(*.ttf) format('truetype'),
+         url(*.svg#BebasNeueRegular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+*/
+@font-face {
+  font-family: "Bebas";
+  src: url("fonts/BebasNeue Book.otf");
+  src: url("fonts/BebasNeue Book.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 117, ../sass/css3.scss */
+p::first-line {
+  font-family: "Bebas";
+}
