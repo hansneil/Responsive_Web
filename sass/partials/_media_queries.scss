@@ -1,0 +1,20 @@
+@import "compass";
+@import "variables";
+@import "mixins";
+
+/*
+body {
+  @include MQ(XS) {
+    background-color: $color1;
+  }
+  @include MQ(S) {
+    background-color: $color2;
+  }
+  @include MQ(M) {
+    background-color: $color3;
+  }
+  @include MQ(L) {
+    background-color: $color4;
+  }
+}*/
+

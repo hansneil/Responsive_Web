@@ -1,0 +1,53 @@
+@import "compass";
+@import "variables";
+@import "mixins";
+#wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: $header-footer + $margin-space;
+  @include MQ(MPlus) {
+    width: 768px;
+  }
+}
+%margin {
+  margin-left: $margin-space / 2;
+  margin-right: $margin-space / 2;
+}
+#header {
+  @extend %margin;
+  width: $header-footer;
+  background-color: $color8;
+  @include MQ(MPlus) {
+    width: 768px - $margin-space;
+  }
+}
+#navigation ul li {
+  display: inline-block;
+}
+#sidebar {
+  @extend %margin;
+  float: left;
+  background-color: $color9;
+  width: $side-bar;
+  @include MQ(MPlus) {
+    width: 768px - $margin-space;
+  }
+}
+#content {
+  @extend %margin;
+  float: right;
+  width: $content;
+  background-color: $color10;
+  @include MQ(MPlus) {
+    width: 768px - $margin-space;
+  }
+}
+#footer {
+  @extend %margin;
+  clear: both;
+  background-color: $color11;
+  width: $header-footer;
+  @include MQ(MPlus) {
+    width: 768px - $margin-space;
+  }
+}

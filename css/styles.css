@@ -1,0 +1,74 @@
+/* line 4, ../sass/partials/_layout.scss */
+#wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+@media screen and (max-width: 48em) {
+  /* line 4, ../sass/partials/_layout.scss */
+  #wrapper {
+    width: 768px;
+  }
+}
+
+/* line 12, ../sass/partials/_layout.scss */
+#header, #sidebar, #content, #footer {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 16, ../sass/partials/_layout.scss */
+#header {
+  width: 940px;
+  background-color: #779307;
+}
+@media screen and (max-width: 48em) {
+  /* line 16, ../sass/partials/_layout.scss */
+  #header {
+    width: 748px;
+  }
+}
+
+/* line 24, ../sass/partials/_layout.scss */
+#navigation ul li {
+  display: inline-block;
+}
+
+/* line 27, ../sass/partials/_layout.scss */
+#sidebar {
+  float: left;
+  background-color: #fe9c00;
+  width: 220px;
+}
+@media screen and (max-width: 48em) {
+  /* line 27, ../sass/partials/_layout.scss */
+  #sidebar {
+    width: 748px;
+  }
+}
+
+/* line 36, ../sass/partials/_layout.scss */
+#content {
+  float: right;
+  width: 700px;
+  background-color: #dedede;
+}
+@media screen and (max-width: 48em) {
+  /* line 36, ../sass/partials/_layout.scss */
+  #content {
+    width: 748px;
+  }
+}
+
+/* line 45, ../sass/partials/_layout.scss */
+#footer {
+  clear: both;
+  background-color: #663300;
+  width: 940px;
+}
+@media screen and (max-width: 48em) {
+  /* line 45, ../sass/partials/_layout.scss */
+  #footer {
+    width: 748px;
+  }
+}

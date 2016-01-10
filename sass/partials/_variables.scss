@@ -1,0 +1,24 @@
+//media queries
+$XS: 20em; //320px
+$S:  34em; //544px
+$M:  48em; //768px
+$L:  60em; //960px
+
+//color names
+$color1: #781421;
+$color2: #e58f22;
+$color3: #d3ff76;
+$color4: #23e878;
+$color5: #00e8f8;
+$color6: #348fef;
+$color7: #8f60ff;
+$color8: #779307;
+$color9: #fe9c00;
+$color10: #dedede;
+$color11: #663300;
+
+//page size
+$header-footer: 940px;
+$side-bar: 220px;
+$content: 700px;
+$margin-space: $header-footer - $side-bar - $content;
