@@ -98,3 +98,64 @@
  }
  </pre>
  - 2.5 网格系统
+
+# 3.HTML5［响应式设计］
+ - 3.1 polyfill和Modernizr
+       
+       针对不支持HTML5的旧式浏览器[如ie6等]，polyfill和Modernizr提供了js脚本用于弥补这方面的缺陷。相对于polyfill，Modernizr更值得令人关注，因为它除了让IE支持html5的新元素，还能够基于一系列特性测试来有条件的加载更高级的polyfill，css和额外的js文件。
+ - 3.2 关于HTML5
+  - 新的文档类型声明: <!DOCTYPE html> / <!doctype html> | 告诉浏览器用标准模式渲染
+  - 新建html元素，可以设置语言类型: <‘html lang="en"> / <’html lang="cn">
+  - 设置字符编码: <meta charset=utf-8> | 通常都是utf-8编码，除非有特殊需要
+  - 精简之处：
+    
+    引用外部CSS和JS文件时，不再需要声明类型，添加引号，不区分大小写等，如'<'link rel=stylesheet href=css/main.css'>'是一个完全正确的标签。这种精简不局限于引用外部文件，在其他元素中也同样适用。例如下面的代码完全正确:
+<pre>
+  ‘<’div id=wrapper>
+    ‘<’img SRC=img/1.png>
+  ‘<’/div>
+</pre>
+  - <'a>标签：可以在标签中嵌套多个元素
+    
+    这里需要注意一点，不能在标签中嵌套标签，也不能在标签中嵌套表单
+  - html废弃零件: strike enter font frame frameset等等
+ - 3.3 HTML5的全新语义元素
+  - <'section> 定义文档或者应用程序的区域
+  - <'nav> 定义文档的主导航区
+  - <'article> 用来包裹独立的内容片段，这部分片段复制到另外一个网站上也能保持完整的意义。或者说该片段能否独立为一篇博客或者文章
+  - <'aside> 定义与页面主内容松散相关的内容，可用作侧边栏，引用，广告或导航元素
+  - <'hgroup> 如果页面中有<'h1> <'h2> <'h3>等一组元素，可考虑用<'hgroup>将它们包装起来
+  - <'head> 不计入大纲结构，不能用它来划分结构，用它来包含对区域内容的说明
+  - <'footer> 同header一样，但它用来包含区域内容的辅助信息
+  - <'address> 标准离其最近的<'article>或<'body>元素的联系信息
+ - 3.4 文本级语义元素
+  - <'b> <'em> <'i>
+ - 3.5 WAI-ARIA 无障碍网页应用技术
+  - 地标角色, role:[application, banner, complementary, contentinfo, form, main, navigation, search]
+ - 3.6 关于html5的video等媒体元素
+  - <'video>: <'video width height controls autoplay loop poster src><'source><'/source><'/video>
+  - 响应式video, 只要去掉width height，之后再设置video {width: height:}即可
+  - 对于iframe插入的视频，无法通过上述方法实现响应式，必须借助于插件[FitVids](http://fitvidsjs.com/)
+ - 3.7 html让离线web变得可能
+   
+   - 优点：设置和使用非常简单
+   - 机制：每个需要离线的网页都需要指定一个.manifest的文本文件，该文本文件罗列了离线所需的所有资源文件
+   - 使用： <'html lang='en' manifest='/offline.manifest'>
+   <pre>
+     CACHE MANIFEST
+       #v1
+      CACHE:
+       basic_page_layout_ch4.html
+       css/main.css
+       img/atwiNavBg.png
+       img/kingHong.jpg
+       img/midnightRun.jpg
+       img/moulinRouge.jpg
+       img/oscar.png
+       img/wyattEarp.jpg
+       img/buntingSlice3Invert.png
+       img/buntingSlice3.png
+     NETWORK: *
+     FALLBACK:
+       //offline.html
+   </pre>
