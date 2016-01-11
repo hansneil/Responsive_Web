@@ -159,3 +159,56 @@
      FALLBACK:
        //offline.html
    </pre>
+
+# 4.解决跨浏览器问题
+ - 4.1 渐进增强和优雅降级
+   
+   优雅降级：在现代浏览器中制作网站，然后会老版浏览器提供基本功能。新特性在老版浏览器中会降级。
+   
+   渐进增强：恪守web标准为基础，在所有浏览器中均可用，然后通过css和js来为新浏览器提供渐进式的功能
+ - 4.2 Modernizr
+   
+   用于检测浏览器功能的开源js库，除了让ie8及一下版本的浏览器支持html5元素，主要做的是浏览器功能检测。至于如何处理之后的事，就是开发人员的事了。
+   - 使用modernizr辅助修正样式问题
+     
+     在不支持3d变换的浏览器上，使用.no-csstransforms3d .note{display:block} .note{display:none}
+   - 使用modernizr让老版本ie支持HTML5
+   - 使用respond.js让ie支持minx/max媒体查询功能
+   - 使用modernizr按需加载资源
+     加载方法很简单：
+ <pre>
+    Modernizr.load({
+        test: Modernizr.mq('only all');
+        nope: 'js/respond.js'
+    })
+    Modernizr.load({
+        test: Modernizr.mq('only all');
+        yep: 'js/pass.js';
+        nope: ['js/respond.min.js', 'fail-polyfill.js', 'fail.js'],
+        both: 'js/for-all.js'
+    })
+ </pre>
+ - 4.3 必要时将导航链接变为下拉菜单［渐进增强的典型代表］
+       
+       需要jquery的一个插件，jquery.mobilemenu.js，然后按需加载
+ <pre>
+    Modernizr.load(
+     {
+        test: Modernizr.mq('only all'),
+        nope: 'js/respond.min.js'
+     },
+     {
+        test: Modernizr.mq('only screen and (max-width: 600px)'),
+        yep: ['js/jquery-1.7.1.js', 'js/jquery.mobilemenu.js'],
+        complete: function() {
+            $document.ready(function(){
+                $("#mainnav").mobileMenu({
+                    switchWidth: 600,
+                    topOptionText: 'Select a Page',
+                    indentString: '&nbsp;&nbsp;&nbsp'
+                });
+            })
+        }
+     }
+    )
+ </pre>
