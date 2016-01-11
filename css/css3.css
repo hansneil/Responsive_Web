@@ -8,7 +8,7 @@
     设置栏间隔: column-gap
     设置分割线: column-rule
 */
-/* line 14, ../sass/css3.scss */
+/* line 15, ../sass/css3.scss */
 p[id*="-content-"] {
   -webkit-column-width: 12em;
   -moz-column-width: 12em;
@@ -25,7 +25,7 @@ p[id*="-content-"] {
   属性:
     word-wrap: break-word
 */
-/* line 29, ../sass/css3.scss */
+/* line 30, ../sass/css3.scss */
 p[id^="my-content"] {
   -ms-word-wrap: break-word;
   word-wrap: break-word;
@@ -41,7 +41,7 @@ p[id^="my-content"] {
         包含特定字符串的 Element[attribute *= "value"]
         以特定后缀结尾的 Element[attribute $= "value"]
 */
-/* line 43, ../sass/css3.scss */
+/* line 44, ../sass/css3.scss */
 p[id^="my-"] {
   color: #781421;
 }
@@ -56,59 +56,59 @@ p[id^="my-"] {
   5. not选择器
   6. 伪元素的修正: ::first-line ::first-letter
 */
-/* line 56, ../sass/css3.scss */
+/* line 57, ../sass/css3.scss */
 header p:last-child {
   color: #779307;
 }
 
-/* line 59, ../sass/css3.scss */
+/* line 60, ../sass/css3.scss */
 nav {
   display: table;
 }
 
-/* line 62, ../sass/css3.scss */
+/* line 63, ../sass/css3.scss */
 nav ul {
   display: table-row;
   border: 0.1em solid #23e878;
 }
 
-/* line 66, ../sass/css3.scss */
+/* line 67, ../sass/css3.scss */
 nav ul li {
   display: table-cell;
   width: 5em;
   border-top: 0.2em solid #23e878;
   border-bottom: 0.2em solid #23e878;
 }
-/* line 71, ../sass/css3.scss */
+/* line 72, ../sass/css3.scss */
 nav ul li:last-child {
   text-align: right;
   border-right: 0.2em solid #23e878;
 }
-/* line 75, ../sass/css3.scss */
+/* line 76, ../sass/css3.scss */
 nav ul li:first-child {
   text-align: left;
   border-left: 0.2em solid #23e878;
 }
-/* line 79, ../sass/css3.scss */
+/* line 80, ../sass/css3.scss */
 nav ul li a {
   text-decoration: none;
   color: #d3ff76;
 }
-/* line 83, ../sass/css3.scss */
+/* line 84, ../sass/css3.scss */
 nav ul li.me:nth-of-type(2n+1) a {
   color: #781421;
 }
-/* line 86, ../sass/css3.scss */
+/* line 87, ../sass/css3.scss */
 nav ul li:not(.me) a {
   color: #00e8f8;
 }
 
-/* line 90, ../sass/css3.scss */
+/* line 91, ../sass/css3.scss */
 p::first-letter {
   font-size: 2em;
 }
 
-/* line 93, ../sass/css3.scss */
+/* line 94, ../sass/css3.scss */
 p::first-line {
   color: #00e8f8;
 }
@@ -134,7 +134,122 @@ p::first-line {
   font-weight: normal;
   font-style: normal;
 }
-/* line 117, ../sass/css3.scss */
+/* line 118, ../sass/css3.scss */
 p::first-line {
   font-family: "Bebas";
+}
+
+/*
+  CSS3更多特性
+  --
+  text-shadow
+  box-shadow
+  linear-gradient()
+  radial-gradient()
+  repeating-linear-gradient()重复径向渐变
+  repeating-radial-gradient()
+  背景图案渐变
+*/
+/*
+  多重背景图片
+  --
+  background:
+    url('1.png'),
+    url('2.png'),
+    url('3.png');
+    排在最前面的背景会再最上面
+    background-size
+    background-position
+*/
+/*
+  CSS3过渡,变形,动画
+  --
+  transition:
+    - transition-property: 要过渡的CSS属性名称
+    - transition-duration: 过渡持续时间
+    - transition-timing-function: 过渡期间速度变化函数[ease ease-in ease-out ease-in-out linear cubic-bezier]
+    - transition-delay: 过渡开始前的延迟时间
+
+    过渡时间段内过渡不同属性
+    transition-property: border, color, text-shadow;
+    transition-duration: 2s, 3s, 8s
+  --
+  transform:
+    - scale: 缩放
+    - translate: 移动 x,y表示向右向上移动多少像素
+    - rotate: 旋转
+    - skew: 斜切
+    - matrix: 以像素精度控制变形
+*/
+/* line 166, ../sass/css3.scss */
+footer a {
+  display: block;
+  content: '.';
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 3em;
+  height: 3em;
+  background-color: #00e8f8;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 2.5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  -webkit-transition: all 1s ease;
+  -webkit-transition-delay: 0s;
+  transition: all 1s ease 0s;
+  -moz-animation: haha 1.5s infinite ease-in;
+  -webkit-animation: haha 1.5s infinite ease-in;
+  animation: haha 1.5s infinite ease-in;
+}
+/* line 180, ../sass/css3.scss */
+footer a:hover {
+  background-color: #ef9434;
+  border-radius: 50%;
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  /*@include transform(scale(2));
+  @include transform(translate(200px, 0px));
+  @include transform(rotate(20deg));
+  @include transform(skew(10deg, 2deg));*/
+}
+
+@-webkit-keyframes haha {
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+  }
+  50% {
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -moz-border-radius: 25%;
+    -webkit-border-radius: 25%;
+    border-radius: 25%;
+  }
+  50% {
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+}
+/* line 204, ../sass/css3.scss */
+.no-csstransforms3d footer {
+  display: none;
 }

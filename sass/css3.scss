@@ -1,3 +1,4 @@
+@import "compass";
 @import "partials/variables";
 $column-gap: 2em;
 $column-rule: thin dotted #999;
@@ -116,4 +117,90 @@ p::first-line {
 }
 p::first-line {
   font-family: "Bebas";
+}
+/*
+  CSS3更多特性
+  --
+  text-shadow
+  box-shadow
+  linear-gradient()
+  radial-gradient()
+  repeating-linear-gradient()重复径向渐变
+  repeating-radial-gradient()
+  背景图案渐变
+*/
+body {
+  //background: repeating-linear-gradient(180deg, #ffffff 0px, lighten($color5, 30%) 5px);
+}
+/*
+  多重背景图片
+  --
+  background:
+    url('1.png'),
+    url('2.png'),
+    url('3.png');
+    排在最前面的背景会再最上面
+    background-size
+    background-position
+*/
+/*
+  CSS3过渡,变形,动画
+  --
+  transition:
+    - transition-property: 要过渡的CSS属性名称
+    - transition-duration: 过渡持续时间
+    - transition-timing-function: 过渡期间速度变化函数[ease ease-in ease-out ease-in-out linear cubic-bezier]
+    - transition-delay: 过渡开始前的延迟时间
+
+    过渡时间段内过渡不同属性
+    transition-property: border, color, text-shadow;
+    transition-duration: 2s, 3s, 8s
+  --
+  transform:
+    - scale: 缩放
+    - translate: 移动 x,y表示向右向上移动多少像素
+    - rotate: 旋转
+    - skew: 斜切
+    - matrix: 以像素精度控制变形
+*/
+footer a {
+  display: block;
+  content: '.';
+  @include box-sizing(border-box);
+  width: 3em;
+  height: 3em;
+  background-color: $color5;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 2.5em;
+  @include border-radius(5px);
+  //@include box-shadow(1px 1px 2px $color4);
+  @include transition(all 1s ease 0s);
+  @include animation(haha 1.5s infinite ease-in);
+  &:hover {
+    background-color: complement($color6);
+    border-radius: 50%;
+    @include transform(rotateY(180deg));
+    /*@include transform(scale(2));
+    @include transform(translate(200px, 0px));
+    @include transform(rotate(20deg));
+    @include transform(skew(10deg, 2deg));*/
+  }
+}
+@-webkit-keyframes haha {
+  0% {
+    @include transform(rotateY(0deg));
+    @include border-radius(5px);
+  }
+  50% {
+    @include transform(rotateY(90deg));
+    @include border-radius(25%);
+  }
+  50% {
+    @include transform(rotateY(180deg));
+    @include border-radius(50%);
+  }
+}
+.no-csstransforms3d footer {
+  display: none;
 }
